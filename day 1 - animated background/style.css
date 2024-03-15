@@ -1,0 +1,51 @@
+body,html{
+    background-color: #222;
+    height: 100vh;
+    width: 100vw;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#root{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#elements{
+    position: relative;
+    display: flex;
+}
+#elements span{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0073;
+    margin: 0 4px;
+    /* border-radius: 50%; */
+    box-shadow: 0 0 0 10px #ff840044,
+    0 0 50px #ff8400,
+    0 0 100px #ff8400;
+    animation: animateitem 10s linear infinite ;
+    animation-duration: calc(125s / var(--i));
+    
+}
+#elements span:nth-child(odd){
+    background-color: #c040e0;
+    box-shadow: 0 0 0 10px #c040e044,
+    0 0 50px #c040e0,
+    0 0 100px #c040e0;
+}
+
+@keyframes animateitem {
+    0%{
+        transform: translateY(100vh) scale(0)
+                    rotate(0deg);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1)
+                    rotate(180deg);
+    }
+}
